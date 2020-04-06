@@ -4,12 +4,18 @@ import $ from 'jquery';
 const Title = styled.h2`
 text-align: left;
 `
+const Desc = styled.p`
+padding: 0.5cm;
+`
 const Forecast = styled.p``
 const Current = styled.p``
 const Find = styled.button`
 height: 0.8cm;
 background-color: light-gray;
-border: none;
+border-color: lightblue; 
+border-style: solid;
+border-left: none;
+
 `
 var selectedCity = ""
 function cityAPI() {
@@ -132,15 +138,26 @@ function App() {
             <Title>
             🌞day
             </Title>              
-            <div id="search"> 
+              <div class="row">
+                <div class="col-sm-4">
+                  <Desc>
+                    Welcome to sun-day. get weather conditions on almost any country in a matter of seconds
+                  </Desc>
+                </div>
+                <div class="col-sm-4">
+                <div id="search"> 
                 <center>
                   <input type="text" id="userCity" list="selectCity" placeholder="pick a city..">
-                  </input><Find onClick={fetchAPI}>Show</Find>
+                  </input><Find id="find" onClick={fetchAPI}>Show</Find>
                 </center>  
                 <datalist id="selectCity">
                   </datalist>              
-                <hr id="sep1"></hr>   
-            </div>
+                 
+              </div>
+                </div>
+                <div class="col-sm-4"></div>
+                <hr id="sep1"></hr>  
+              </div>
               <div id="data">
               <div id="abtC" class="container">               
               <div class="row">                             
@@ -171,7 +188,13 @@ function App() {
               </Forecast>
             </div>
               </div>
-          </div>
+              <p>
+                  powered by
+                    <a href="https://www.weatherapi.com">
+                      <img src="https://cdn.weatherapi.com/v4/images/weatherapi_logo.png"></img>
+                    </a>
+                  </p>
+          </div>        
         </div>
       </div>
     </div>

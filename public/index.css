@@ -9,4 +9,11 @@ body {
 }
 #selectCity {
     height: 0.7cm;
+    
 }
+#userCity {
+    border-color: lightblue; 
+    border-style: solid;
+    border-right: none;
+}
+
