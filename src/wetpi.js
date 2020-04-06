@@ -191,7 +191,7 @@ function App() {
               <p>
                   powered by
                     <a href="https://www.weatherapi.com">
-                      <img src="https://cdn.weatherapi.com/v4/images/weatherapi_logo.png"></img>
+                      <img id="apiS" src="https://cdn.weatherapi.com/v4/images/weatherapi_logo.png"></img>
                     </a>
                   </p>
           </div>        
