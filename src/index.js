@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Wetpi from './wetpi';
+import Wetpi from './wetpi.js';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
