@@ -130,7 +130,7 @@ function App() {
         <div class="row">
           <div class="col-lg-12">    
             <Title>
-              WetPi
+            🌞day
             </Title>              
             <div id="search"> 
                 <center>
