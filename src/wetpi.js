@@ -105,7 +105,14 @@ function fetchData(city) {
     })
     .catch(err => {
         console.log(err);
+        error()
+
     })
+}
+
+function error() {
+alert("oops, something went wrong")
+window.location.reload()
 }
 
 $(document).ready(function(){
@@ -115,8 +122,6 @@ $(document).ready(function(){
   $("#sep1").hide()
 
 })
-
-
 
 function App() {
   return (
@@ -150,7 +155,6 @@ function App() {
                 </div>
               </div>
               <Current id="current">
-                <hr id="sep"></hr>
                 <div class="row">
                   <div class="col-sm-12">
                     <p id="currentTemp"></p>
