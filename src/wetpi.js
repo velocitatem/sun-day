@@ -38,8 +38,8 @@ function cityAPI() {
 
 
 function fetchAPI() {
-  console.log("selected: " +  $("#selectCity :selected").val())
-  selectedCity = $("#selectCity :selected").val()
+  console.log("selected: " +  $("#userCity").val())
+  selectedCity = $("#userCity").val()
   fetchData(selectedCity) 
 }
 
@@ -48,16 +48,11 @@ function showData(info) {
 $("#sep").show()
 $("#sep1").show()
 
-$("#abt").append("<h2>City: "+info.location.name+"</h2>")
-$("#abt").append("<a>Country: "+info.location.country+"</a>")
+$("#city").html("City: "+info.location.name)
+$("#country").html("Country: "+info.location.country)
 $("#weatherStat").attr('src', info.current.condition.icon)
 //current
-/*                    <a id="currentTemp"></a> <br></br>
-                    <a id="feellike"></a> <br></br>
-                    <a id="Condition"></a> <br></br>
-                    <a id="windSpeed"></a> <br></br>
-                    <a id="uvLevel"></a> <br></br>
-*/
+
 $("#currentTemp").html("Temperature: "+info.current.temp_c+"°C")
 $("#feellike").html("Feels like: "+info.current.feelslike_c+"°C")
 $("#Condition").html("Condition: "+info.current.condition.text)
@@ -134,16 +129,19 @@ function App() {
             </Title>              
             <div id="search"> 
                 <center>
-                  <select id="selectCity" placeholder="pick a city..">
-                    <option value="Pick a City">Pick a City</option>
-                  </select><Find onClick={fetchAPI}>Show</Find>
-                </center>                
+                  <input type="text" id="userCity" list="selectCity" placeholder="pick a city..">
+                  </input><Find onClick={fetchAPI}>Show</Find>
+                </center>  
+                <datalist id="selectCity">
+                  </datalist>              
                 <hr id="sep1"></hr>   
             </div>
               <div id="data">
               <div id="abtC" class="container">               
               <div class="row">                             
-                <div class="col-sm-5" id="abt">                  
+                <div class="col-sm-5" id="abt">     
+                <h2 id="city"></h2>             
+                <p id="country"></p>
                 </div>
                 <div class="col-sm-7">
                   <center>
