@@ -41,8 +41,6 @@ function cityAPI() {
   })
 }
 
-
-
 function fetchAPI() {
   console.log("selected: " +  $("#userCity").val())
   selectedCity = $("#userCity").val()
@@ -141,7 +139,7 @@ function App() {
               <div class="row">
                 <div class="col-sm-4">
                   <Desc>
-                    Welcome to sun-day. get weather conditions on almost any country in a matter of seconds
+                    Welcome to sun-day. get weather conditions on almost any location in a matter of seconds
                   </Desc>
                 </div>
                 <div class="col-sm-4">
