@@ -18,6 +18,9 @@ border-left: none;
 
 `
 var selectedCity = ""
+
+
+
 function cityAPI() {
   fetch("https://restcountries.eu/rest/v2/all")
   .then((response) => {
@@ -119,12 +122,29 @@ alert("oops, something went wrong")
 window.location.reload()
 }
 
+function currentLOC() {
+  var ipLink = "http://ip-api.com/json"
+
+fetch(ipLink)
+.then((response) => {
+    return response.json();
+})
+.then((data) => {
+    console.log()
+    data = data.city
+    fetchData(data)
+})
+.catch(err => {
+    console.log(err);
+})
+}
+
 $(document).ready(function(){
   console.clear()
   cityAPI()
   $("#sep").hide()
   $("#sep1").hide()
-
+  currentLOC()
 })
 
 function App() {
